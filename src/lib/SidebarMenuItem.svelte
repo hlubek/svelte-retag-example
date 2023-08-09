@@ -1,19 +1,4 @@
-<svelte:options customElement="ui-sidebar-menu-item" />
-
-<!-- We include the global stylesheet, cause shadow DOM... -->
-<link rel="stylesheet" href="/static/tailwind/output.css" />
-
-<script lang="ts">
-    import { onMount } from 'svelte';
-
-    /** @type {HTMLElement} */
-    let element;
-
-    onMount(() => {
-        console.debug("Enabling htmx, the hard way!", element)
-        htmx.process(element);
-    });
-
+<script>
     import classNames from 'classnames';
 
     export let href = "#";
@@ -24,7 +9,7 @@
     let isCurrent = current !== undefined && current !== "false";
 </script>
 
-<li bind:this={element} hx-boost={true}>
+<li>
     <a
             href={href}
             class={classNames("group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold", {

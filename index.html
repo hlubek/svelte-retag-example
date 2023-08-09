@@ -1,17 +1,18 @@
 <!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8"/>
-    <link rel="icon" type="image/svg+xml" href="/vite.svg"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vite + Svelte + TS</title>
-</head>
-<body>
-
-<my-wrapper>
-<my-counter></my-counter>
-</my-wrapper>
-
-<script type="module" src="/src/main.ts"></script>
-</body>
+  </head>
+  <body>
+    <div id="app">
+      <ui-sidebar-menu>
+        <ui-sidebar-menu-item href="/" label="Home" current></ui-sidebar-menu-item>
+        <ui-sidebar-menu-item href="/projects" label="Projects"></ui-sidebar-menu-item>
+      </ui-sidebar-menu>
+    </div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
 </html>

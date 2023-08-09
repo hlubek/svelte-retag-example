@@ -1,15 +1,47 @@
-import "./lib/Counter.svelte";
-import "./lib/Wrapper.svelte";
-import "./lib/SidebarLayout.svelte";
-import "./lib/Sidebar.svelte";
-import "./lib/SidebarMenu.svelte";
-import "./lib/SidebarMenuItem.svelte";
+import svelteRetag from 'svelte-retag';
 
-const el = document.body.querySelector('my-counter');
-el.addEventListener('custom', (e) => {
-    console.log('custom event emitted by my-counter (direct listener)', e);
-})
+import Counter from "./lib/Counter.svelte";
 
-document.addEventListener('custom', (e) => {
-    console.log('custom event emitted by my-counter (document listener, bubbled)', e);
-})
+svelteRetag({
+    component: Counter,
+    tagname: 'my-counter',
+
+    shadow: false,
+});
+
+import SidebarLayout from "./lib/SidebarLayout.svelte";
+
+svelteRetag({
+    component: SidebarLayout,
+    tagname: 'ui-sidebar-layout',
+
+    shadow: false,
+});
+
+import Sidebar from "./lib/Sidebar.svelte";
+
+svelteRetag({
+    component: Sidebar,
+    tagname: 'ui-sidebar',
+
+    shadow: false,
+});
+
+import SidebarMenu from "./lib/SidebarMenu.svelte";
+
+svelteRetag({
+    component: SidebarMenu,
+    tagname: 'ui-sidebar-menu',
+
+    shadow: false,
+});
+
+import SidebarMenuItem from "./lib/SidebarMenuItem.svelte";
+
+svelteRetag({
+    component: SidebarMenuItem,
+    tagname: 'ui-sidebar-menu-item',
+
+    attributes: ['href', 'label', 'current'],
+    shadow: false,
+});

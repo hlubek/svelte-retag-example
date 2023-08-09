@@ -1,8 +1,3 @@
-<svelte:options customElement="ui-sidebar-layout" />
-
-<!-- We include the global stylesheet, cause shadow DOM... -->
-<link rel="stylesheet" href="/static/tailwind/output.css" />
-
 <script>
     import classNames from "classnames";
 
